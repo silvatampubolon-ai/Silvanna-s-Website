@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2A3CF0">
+  <title>Silvanna Tampubolon | Desainer grafis</title>
+  <meta name="description" content="Aku Silvanna, desainer grafis yang suka mengeksplor berbagai jenis desain dan visual.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================
+       WARNA: ganti di sini, seluruh website ikut berubah
+       ========================================================== */
+    :root {
+      --kobalt: #2A3CF0;
+      --kertas: #ECE8FF;
+      --tinta: #16123A;
+      --permen: #FF9AD1;
+      --matahari: #FFD84A;
+      --putih: #F8F6FF;
+      --putih-redup: #D6D9FF;
+      --gutter: clamp(1.25rem, 5vw, 3rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+
+    body {
+      margin: 0;
+      font-family: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      background: var(--tinta);
+      color: var(--tinta);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    :focus-visible {
+      outline: 3px solid currentColor;
+      outline-offset: 4px;
+    }
+
+    h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+    ul, ol { padding: 0; list-style: none; }
+
+    /* ---------- Pola dasar bagian ---------- */
+    .bagian { padding: clamp(4rem, 9vw, 7.5rem) var(--gutter); }
+    .bungkus { max-width: 1200px; margin-inline: auto; }
+    .kertas { background: var(--kertas); color: var(--tinta); }
+    .gelap { background: var(--tinta); color: var(--putih); }
+    .kuning { background: var(--matahari); color: var(--tinta); }
+
+    .judul-bagian {
+      font-size: clamp(2rem, 4.2vw, 3.25rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .chip {
+      display: inline-block;
+      padding: 0.25rem 0.8rem;
+      border: 1.5px solid currentColor;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .daftar-chip { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    /* ==========================================================
+       HERO
+       ========================================================== */
+    .hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100svh;
+      padding: 1.25rem var(--gutter) 2.5rem;
+      background: var(--kobalt);
+      color: var(--putih);
+      overflow: hidden;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+    }
+    .nav ul { display: flex; gap: clamp(1rem, 3vw, 2rem); }
+    .nav a { text-decoration: none; font-weight: 500; }
+    .nav a:hover { text-decoration: underline; text-underline-offset: 0.3em; }
+    .logo { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
+
+    .hero-isi {
+      display: grid;
+      gap: 2rem;
+      margin-top: auto;
+      padding-top: 3rem;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.4rem 0.95rem;
+      border: 1.5px solid rgba(248, 246, 255, 0.5);
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .titik {
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 50%;
+      background: var(--matahari);
+    }
+
+    .nama {
+      margin: 1.25rem 0 1.5rem;
+      font-size: clamp(3.75rem, 19vw, 9rem);
+      line-height: 0.86;
+      letter-spacing: -0.035em;
+      font-weight: 800;
+      font-variation-settings: "wght" 800, "wdth" 100;
+    }
+    .baris { display: block; }
+
+    .pengantar {
+      max-width: 26em;
+      font-size: clamp(1.15rem, 2vw, 1.6rem);
+      line-height: 1.35;
+      font-weight: 500;
+    }
+
+    /* Foto ala stiker */
+    .stiker {
+      position: relative;
+      justify-self: start;
+      margin-top: 1.5rem;
+      transform: rotate(-5deg);
+    }
+    .stiker img {
+      display: block;
+      width: clamp(9rem, 20vw, 16rem);
+      aspect-ratio: 1;
+      object-fit: cover;
+      border: 6px solid var(--putih);
+      border-radius: 44% 56% 52% 48% / 52% 44% 56% 48%;
+      box-shadow: 8px 8px 0 var(--tinta);
+      object-position: center 20%;
+      background: var(--permen);
+    }
+    .gelembung {
+      position: absolute;
+      top: -1.6rem;
+      left: 50%;
+      padding: 0.45rem 0.9rem;
+      border-radius: 1rem;
+      background: var(--matahari);
+      color: var(--tinta);
+      font-weight: 600;
+      white-space: nowrap;
+      transform: translateX(-50%) rotate(4deg);
+    }
+    .gelembung::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -0.55rem;
+      margin-left: -0.5rem;
+      border: 0.5rem solid transparent;
+      border-top-color: var(--matahari);
+      border-bottom: 0;
+    }
+
+    @media (min-width: 860px) {
+      .hero-isi {
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        gap: 3rem;
+      }
+      .nama { font-size: clamp(5rem, 14vw, 14rem); }
+      .stiker { justify-self: end; margin: 0 0.5rem 0.5rem 0; }
+    }
+
+    /* ==========================================================
+       TENTANG, PERJALANAN, KERJAAN
+       ========================================================== */
+    .tentang-grid { display: grid; gap: 3rem; }
+    @media (min-width: 860px) {
+      .tentang-grid {
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+        gap: 5rem;
+      }
+    }
+
+    .pernyataan {
+      max-width: 24em;
+      margin-bottom: 1.5rem;
+      font-size: clamp(1.65rem, 3.4vw, 2.6rem);
+      line-height: 1.2;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .cerita { max-width: 38em; }
+
+    .fakta { border-bottom: 2px solid var(--tinta); align-self: start; }
+    .fakta div {
+      display: grid;
+      grid-template-columns: 7.5rem 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-top: 2px solid var(--tinta);
+    }
+    .fakta dt { font-weight: 700; }
+
+    .blok { margin-top: clamp(4rem, 8vw, 6.5rem); }
+
+    .perjalanan { border-bottom: 2px solid var(--tinta); }
+    .perjalanan li {
+      display: grid;
+      grid-template-columns: 6rem 1fr;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 2px solid var(--tinta);
+    }
+    .tahun {
+      font-size: 1.5rem;
+      line-height: 1.2;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+    .perjalanan p { max-width: 40em; }
+
+    /* Akordeon kerjaan */
+    .kerjaan { border-bottom: 2px solid var(--tinta); }
+    .kerjaan details { border-top: 2px solid var(--tinta); }
+    .kerjaan summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      cursor: pointer;
+      list-style: none;
+      font-size: clamp(1.5rem, 3.2vw, 2.4rem);
+      line-height: 1.15;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      transition: color 0.2s;
+    }
+    .kerjaan summary::-webkit-details-marker { display: none; }
+    .kerjaan summary:hover { color: var(--kobalt); }
+
+    .plus {
+      position: relative;
+      flex: none;
+      width: 1.6rem;
+      height: 1.6rem;
+      transition: transform 0.25s ease;
+    }
+    .plus::before, .plus::after {
+      content: "";
+      position: absolute;
+      background: currentColor;
+      border-radius: 2px;
+    }
+    .plus::before { left: 0; right: 0; top: calc(50% - 1.5px); height: 3px; }
+    .plus::after { top: 0; bottom: 0; left: calc(50% - 1.5px); width: 3px; }
+    .kerjaan details[open] .plus { transform: rotate(45deg); }
+
+    .isi-kerjaan { max-width: 40em; padding-bottom: 1.75rem; }
+    .isi-kerjaan p { margin-bottom: 1rem; }
+
+    /* ==========================================================
+       PROYEK
+       ========================================================== */
+    .proyek-grid { display: grid; gap: 3rem 2rem; }
+    @media (min-width: 860px) {
+      .proyek-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+      .p1 { grid-column: span 7; }
+      .p2 { grid-column: span 5; }
+      .p3 { grid-column: span 12; }
+    }
+
+    .proyek { display: block; text-decoration: none; }
+    .proyek:focus-visible { outline-offset: 8px; }
+
+    .panel {
+      position: relative;
+      min-height: 15rem;
+      overflow: hidden;
+      border-radius: 2rem;
+    }
+    @media (min-width: 860px) {
+      .p1 .panel, .p2 .panel { min-height: 22rem; }
+      .p3 .panel { min-height: 14rem; }
+    }
+    .panel::before, .panel::after {
+      content: "";
+      position: absolute;
+      transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    /* Gambar karya (opsional) menutupi ilustrasi bentuk */
+    .panel img {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Proyek 1: lingkaran dan setengah lingkaran */
+    .p1 .panel { background: var(--kobalt); }
+    .p1 .panel::before {
+      width: 55%;
+      aspect-ratio: 1;
+      right: -8%;
+      top: -18%;
+      border-radius: 50%;
+      background: var(--permen);
+    }
+    .p1 .panel::after {
+      width: 38%;
+      aspect-ratio: 2 / 1;
+      left: 10%;
+      bottom: 0;
+      border-radius: 999px 999px 0 0;
+      background: var(--matahari);
+    }
+    .p1:hover .panel::before, .p1:focus-visible .panel::before { transform: translate(-8%, 10%); }
+    .p1:hover .panel::after, .p1:focus-visible .panel::after { transform: translateY(-14%); }
+
+    /* Proyek 2: bentuk lengkung dan garis */
+    .p2 .panel { background: var(--permen); border-radius: 999px 999px 2rem 2rem; }
+    .p2 .panel::before {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 45%;
+      background: repeating-linear-gradient(90deg, var(--tinta) 0 6px, transparent 6px 22px);
+    }
+    .p2 .panel::after {
+      width: 30%;
+      aspect-ratio: 1;
+      left: 35%;
+      top: 26%;
+      border-radius: 50%;
+      background: var(--kertas);
+    }
+    .p2:hover .panel::after, .p2:focus-visible .panel::after { transform: translateY(-22%); }
+    .p2:hover .panel::before, .p2:focus-visible .panel::before { transform: translateX(11px); }
+
+    /* Proyek 3: cincin dan kotak miring */
+    .p3 .panel { background: var(--matahari); }
+    .p3 .panel::before {
+      height: 150%;
+      aspect-ratio: 1;
+      left: 50%;
+      top: -25%;
+      border: 2.5rem solid var(--kobalt);
+      border-radius: 50%;
+    }
+    .p3 .panel::after {
+      width: 22%;
+      height: 45%;
+      left: 8%;
+      bottom: -8%;
+      border-radius: 1.5rem;
+      background: var(--permen);
+      transform: rotate(-12deg);
+    }
+    .p3:hover .panel::before, .p3:focus-visible .panel::before { transform: translateX(-6%); }
+    .p3:hover .panel::after, .p3:focus-visible .panel::after { transform: rotate(-4deg) translateY(-12%); }
+
+    .info { padding-top: 1.1rem; }
+    .judul-proyek {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.6rem;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+    .proyek:hover .judul-proyek span:first-child { text-decoration: underline; text-underline-offset: 0.2em; }
+    .judul-proyek span:last-child { font-size: 1rem; font-weight: 500; color: var(--putih-redup); }
+    .info p { max-width: 36em; margin-bottom: 1rem; color: var(--putih-redup); }
+
+    /* ==========================================================
+       KONTAK
+       ========================================================== */
+    .besar {
+      margin-bottom: 1.5rem;
+      font-size: clamp(3.25rem, 11.5vw, 10rem);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+    .ajakan { max-width: 32em; margin-bottom: 2rem; font-size: 1.2rem; }
+
+    .aksi { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .tombol {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.95rem 1.6rem;
+      border: 2px solid var(--tinta);
+      border-radius: 999px;
+      background: var(--tinta);
+      color: var(--matahari);
+      font: inherit;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .tombol:hover {
+      background: var(--kobalt);
+      border-color: var(--kobalt);
+      color: var(--putih);
+    }
+    .tombol-garis { background: transparent; color: var(--tinta); }
+    .tombol-garis:hover {
+      background: var(--tinta);
+      border-color: var(--tinta);
+      color: var(--matahari);
+    }
+
+    .toast { min-height: 1.6rem; margin-top: 0.75rem; font-weight: 600; }
+
+    .kontak-daftar { max-width: 34rem; margin-top: 2.5rem; border-bottom: 2px solid var(--tinta); }
+    .kontak-daftar div {
+      display: grid;
+      grid-template-columns: 7.5rem 1fr;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      border-top: 2px solid var(--tinta);
+    }
+    .kontak-daftar dt { font-weight: 700; }
+    .kontak-daftar a {
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 0.25em;
+      word-break: break-word;
+    }
+    .kontak-daftar a:hover { color: var(--kobalt); }
+
+    .kaki {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      padding: 1.5rem var(--gutter);
+      background: var(--tinta);
+      color: var(--putih);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 520px) {
+      .fakta div { grid-template-columns: 6rem 1fr; }
+      .perjalanan li { grid-template-columns: 4.5rem 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .panel::before, .panel::after, .plus, .tombol, .kerjaan summary { transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero" id="atas">
+    <nav class="nav" aria-label="Navigasi utama">
+      <a class="logo" href="#atas">raka.p</a>
+      <ul>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#kerjaan">Kerjaan</a></li>
+        <li><a href="#karya">Karya</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-isi">
+      <div>
+        <p class="status"><span class="titik" aria-hidden="true"></span>Terbuka untuk proyek freelance</p>
+
+        <!-- EDIT: ganti nama kamu (aria-label dan dua baris di bawah) -->
+        <h1 class="nama" id="nama" aria-label="Silvanna Tampubolon">
+          <span class="baris">Silvanna</span>
+          <span class="baris">Tampubolon</span>
+        </h1>
+
+        <p class="pengantar">Desainer grafis yang suka bikin logo, poster, dan visual yang susah dilupakan.</p>
+      </div>
+
+      <!-- EDIT FOTO: simpan fotomu dengan nama foto.jpg di folder yang sama dengan file ini.
+           Foto portrait (tegak) yang wajahnya di bagian atas paling pas. -->
+      <figure class="stiker">
+        <img src="Silvanna Foto.jpg" alt="Foto Silvanna" width="256" height="256">
+        <figcaption class="gelembung">Halo, aku Silvanna!</figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== TENTANG ===================== -->
+    <section class="bagian kertas" id="tentang">
+      <div class="bungkus">
+
+        <div class="tentang-grid">
+          <div>
+            <h2 class="judul-bagian">Tentang aku</h2>
+            <p class="pernyataan">Aku Silvanna, desainer grafis yang percaya visual yang bagus bukan yang paling ramai, tapi yang paling cepat dimengerti.</p>
+            <p class="cerita">Aku mengerjakan identitas merek, poster, kemasan, dan konten media sosial, dari coretan pertama di buku sketsa sampai file siap cetak. Di luar kerjaan, aku suka mengumpulkan kemasan jadul, keliling toko buku bekas, dan memotret papan reklame yang warnanya nabrak.</p>
+          </div>
+
+          <dl class="fakta">
+            <div><dt>Basis</dt><dd>Indonesia, terima proyek remote</dd></div>
+            <div><dt>Bahasa</dt><dd>Indonesia, English, Mandarin</dd></div>
+            <div><dt>Lagi eksplor</dt><dd>Animasi 3D dan Pembuatan Website</dd></div>
+            <div><dt>Bahan bakar</dt><dd>Kopi susu, Indomie Goreng  Aceh</dd></div>
+          </dl>
+        </div>
+
+        <div class="blok" id="perjalanan">
+          <h2 class="judul-bagian">Perjalanan</h2>
+          <ol class="perjalanan">
+            <li><span class="tahun">2021</span><p>Mulai belajar desain dari ikut ekstrakulikuler Jurnalistik sebagai Desainer Grafis.</p></li>
+            <li><span class="tahun">2024</span><p>Kuliah Desain Grafis, dan ikut berbagai macam komunitas.</p></li>
+            <li><span class="tahun">2024</span><p>Proyek freelance pertama di Basic Step idn sebagai Volunteer Desain Grafis selama 1 tahun.</p></li>
+            <li><span class="tahun">2026</span><p>Sekarang menjadi koordinator PDD dan Ketua Desain Grafis di UKM SCC dan Koppi.</p></li>
+          </ol>
+        </div>
+
+        <div class="blok" id="kerjaan">
+          <h2 class="judul-bagian">Yang bisa aku kerjakan</h2>
+          <div class="kerjaan">
+            <details name="kerjaan" open>
+              <summary>Identitas merek<span class="plus" aria-hidden="true"></span></summary>
+              <div class="isi-kerjaan">
+                <p>Logo, palet warna, huruf, sampai panduan pemakaian, supaya mereknya konsisten di mana pun muncul.</p>
+                <ul class="daftar-chip"><li class="chip">Logo</li><li class="chip">Tipografi</li><li class="chip">Brand guideline</li></ul>
+              </div>
+            </details>
+            <details name="kerjaan">
+              <summary>Desain cetak dan kemasan<span class="plus" aria-hidden="true"></span></summary>
+              <div class="isi-kerjaan">
+                <p>Poster, brosur, label, dan kemasan yang enak dilihat dan aman saat dicetak. File aku siapkan lengkap dengan bleed dan profil warna.</p>
+                <ul class="daftar-chip"><li class="chip">Poster</li><li class="chip">Kemasan</li><li class="chip">Siap cetak</li></ul>
+              </div>
+            </details>
+            <details name="kerjaan">
+              <summary>Ilustrasi dan konten digital<span class="plus" aria-hidden="true"></span></summary>
+              <div class="isi-kerjaan">
+                <p>Ilustrasi khas, konten media sosial, dan materi promosi dengan gaya yang seragam dari satu postingan ke postingan berikutnya.</p>
+                <ul class="daftar-chip"><li class="chip">Illustrator</li><li class="chip">Photoshop</li><li class="chip">InDesign</li><li class="chip">Procreate</li></ul>
+              </div>
+            </details>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ===================== KONTAK ===================== -->
+    <section class="bagian kuning" id="kontak">
+      <div class="bungkus">
+        <h2 class="besar">Yuk ngobrol.</h2>
+        <p class="ajakan">Butuh logo, poster, kemasan, atau tampilan baru untuk mereknya? Ceritakan idenya, aku balas paling lambat dua hari.</p>
+
+        <!-- EDIT KONTAK:
+             - WhatsApp: pakai awalan 62 tanpa 0 dan tanpa tanda +. Contoh 0812-3456-7890 jadi 6281234567890
+             - Email: ganti di href, teks, dan data-email
+             - Instagram dan Behance: ganti username di link dan tulisannya -->
+        <div class="aksi">
+          <a class="tombol" href="https://wa.me/6281234567890" target="_blank" rel="noopener">Chat di WhatsApp</a>
+          <a class="tombol tombol-garis" href="mailto:halo@contoh.com">Kirim email</a>
+          <button class="tombol tombol-garis" type="button" id="salin" data-email="halo@contoh.com">Salin email</button>
+        </div>
+        <p class="toast" id="toast" role="status" aria-live="polite"></p>
+
+        <dl class="kontak-daftar">
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/62895338347403" target="_blank" rel="noopener">08953-3383-47403</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:silvannatampubolon7@gmail.com">silvannatampubolon7@gmail.com</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://instagram.com/silvanie7_" target="_blank" rel="noopener">@silvanie7_</a></dd></div>
+          <div><dt>Linkedln</dt><dd><a href="www.linkedin.com/in/silvanna-tampubolon-5919b330a" target="_blank" rel="noopener">www.linkedin.com/in/silvanna-tampubolon-5919b330a</a></dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="kaki">
+    <p>&copy; 2026 Silvanna Tampubolon</p>
+    <a href="#atas">Kembali ke atas</a>
+  </footer>
+
+  <script>
+    (() => {
+      const kurangiGerak = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ---------- Nama di hero: huruf melebar dan menebal mengikuti kursor ---------- */
+      const nama = document.getElementById('nama');
+      const hero = document.getElementById('atas');
+      const huruf = [];
+
+      nama.querySelectorAll('.baris').forEach((baris) => {
+        const teks = baris.textContent.trim();
+        baris.textContent = '';
+        baris.setAttribute('aria-hidden', 'true');
+        [...teks].forEach((h) => {
+          const el = document.createElement('span');
+          el.textContent = h;
+          baris.appendChild(el);
+          huruf.push({ el, v: 0 });
+        });
+      });
+
+      const atur = (l) => {
+        const tebal = Math.round(200 + 600 * l.v);
+        const lebar = Math.round(75 + 25 * l.v);
+        l.el.style.fontVariationSettings = `"wght" ${tebal}, "wdth" ${lebar}`;
+      };
+
+      if (!kurangiGerak) {
+        let kursor = null;
+        let terlihat = true;
+
+        hero.addEventListener('pointermove', (e) => { kursor = { x: e.clientX, y: e.clientY }; });
+        hero.addEventListener('pointerleave', () => { kursor = null; });
+        new IntersectionObserver(([e]) => { terlihat = e.isIntersecting; }).observe(hero);
+
+        const mulai = performance.now();
+        const putar = (sekarang) => {
+          if (terlihat) {
+            huruf.forEach((l, i) => {
+              let target;
+              if (kursor) {
+                const r = l.el.getBoundingClientRect();
+                const jarak = Math.hypot(r.left + r.width / 2 - kursor.x, r.top + r.height / 2 - kursor.y);
+                target = 0.25 + 0.75 * Math.max(0, 1 - jarak / 280);
+              } else {
+                target = 0.4 + 0.6 * (0.5 + 0.5 * Math.sin((sekarang - mulai) / 700 - i * 0.55));
+              }
+              l.v += (target - l.v) * 0.1;
+              atur(l);
+            });
+          }
+          requestAnimationFrame(putar);
+        };
+        requestAnimationFrame(putar);
+      } else {
+        huruf.forEach((l) => { l.v = 1; atur(l); });
+      }
+
+      /* ---------- Foto: kalau foto.jpg belum ada, pakai gambar sementara ---------- */
+      const foto = document.querySelector('.stiker img');
+      const sementara = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23FF9AD1'/%3E%3Ccircle cx='100' cy='78' r='38' fill='%2316123A'/%3E%3Cpath d='M20 200c0-46 36-74 80-74s80 28 80 74z' fill='%2316123A'/%3E%3C/svg%3E";
+      const pakaiSementara = () => { foto.src = sementara; };
+      foto.addEventListener('error', pakaiSementara, { once: true });
+      if (foto.complete && foto.naturalWidth === 0) pakaiSementara();
+
+      /* ---------- Salin email ---------- */
+      const tombolSalin = document.getElementById('salin');
+      const toast = document.getElementById('toast');
+      let timer;
+
+      tombolSalin.addEventListener('click', async () => {
+        const email = tombolSalin.dataset.email;
+        try {
+          await navigator.clipboard.writeText(email);
+          toast.textContent = 'Email disalin.';
+        } catch {
+          toast.textContent = 'Salin manual: ' + email;
+        }
+        clearTimeout(timer);
+        timer = setTimeout(() => { toast.textContent = ''; }, 3000);
+      });
+    })();
+  </script>
+</body>
+</html>
